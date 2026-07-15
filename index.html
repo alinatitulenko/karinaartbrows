@@ -204,47 +204,47 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);letter-spacing:.05em;}
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo">KarinaArtbrows</a>
+  <a href="#hero" class="nav-logo" onclick="trackClick('nav_logo','navigation')">KarinaArtbrows</a>
   <ul class="nav-links">
-    <li><a href="#services" data-i18n="nav_services">Услуги</a></li>
-    <li><a href="#portfolio" data-i18n="nav_portfolio">Работы</a></li>
-    <li><a href="#cabinet" data-i18n="nav_cabinet">Кабинет</a></li>
-    <li><a href="#about" data-i18n="nav_about">О мастере</a></li>
-    <li><a href="#pamyatka" data-i18n="nav_pamyatka">Памятка</a></li>
-    <li><a href="#contacts" data-i18n="nav_contacts">Контакты</a></li>
+    <li><a href="#services" data-i18n="nav_services" onclick="trackClick('nav_services','navigation')">Услуги</a></li>
+    <li><a href="#portfolio" data-i18n="nav_portfolio" onclick="trackClick('nav_portfolio','navigation')">Работы</a></li>
+    <li><a href="#cabinet" data-i18n="nav_cabinet" onclick="trackClick('nav_cabinet','navigation')">Кабинет</a></li>
+    <li><a href="#about" data-i18n="nav_about" onclick="trackClick('nav_about','navigation')">О мастере</a></li>
+    <li><a href="#pamyatka" data-i18n="nav_pamyatka" onclick="trackClick('nav_pamyatka','navigation')">Памятка</a></li>
+    <li><a href="#contacts" data-i18n="nav_contacts" onclick="trackClick('nav_contacts','navigation')">Контакты</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1rem;">
     <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn active" onclick="setLang('ru');trackClick('lang_ru','language')">RU</button>
       <span class="lang-sep">|</span>
-      <button class="lang-btn" onclick="setLang('by')">BY</button>
+      <button class="lang-btn" onclick="setLang('by');trackClick('lang_by','language')">BY</button>
     </div>
     <div class="nav-cta-wrap">
-      <button class="btn btn-dark" id="navCta" onclick="togglePopup('navPhonePopup',event)" data-i18n="btn_book">Записаться</button>
+      <button class="btn btn-dark" id="navCta" onclick="togglePopup('navPhonePopup',event);trackClick('nav_book','cta')" data-i18n="btn_book">Записаться</button>
       <div class="phone-popup" id="navPhonePopup">
-        <a href="tel:+375291434544">+375 29 143&#45;45&#45;44</a>
+        <a href="tel:+375291434544" onclick="trackClick('nav_phone_call','phone')">+375 29 143&#45;45&#45;44</a>
       </div>
     </div>
   </div>
-  <button class="burger" onclick="toggleMenu()" aria-label="Открыть меню">
+  <button class="burger" onclick="toggleMenu();trackClick('burger_menu','navigation')" aria-label="Открыть меню">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="close-btn" onclick="toggleMenu()" aria-label="Закрыть">&#215;</button>
-  <a href="#services" onclick="toggleMenu()" data-i18n="nav_services">Услуги</a>
-  <a href="#portfolio" onclick="toggleMenu()" data-i18n="nav_portfolio">Работы</a>
-  <a href="#cabinet" onclick="toggleMenu()" data-i18n="nav_cabinet">Кабинет</a>
-  <a href="#about" onclick="toggleMenu()" data-i18n="nav_about">О мастере</a>
-  <a href="#pamyatka" onclick="toggleMenu()" data-i18n="nav_pamyatka">Памятка</a>
-  <a href="#contacts" onclick="toggleMenu()" data-i18n="nav_contacts">Контакты</a>
+  <button class="close-btn" onclick="toggleMenu();trackClick('mobile_menu_close','navigation')" aria-label="Закрыть">&#215;</button>
+  <a href="#services" onclick="toggleMenu();trackClick('mobile_nav_services','navigation')" data-i18n="nav_services">Услуги</a>
+  <a href="#portfolio" onclick="toggleMenu();trackClick('mobile_nav_portfolio','navigation')" data-i18n="nav_portfolio">Работы</a>
+  <a href="#cabinet" onclick="toggleMenu();trackClick('mobile_nav_cabinet','navigation')" data-i18n="nav_cabinet">Кабинет</a>
+  <a href="#about" onclick="toggleMenu();trackClick('mobile_nav_about','navigation')" data-i18n="nav_about">О мастере</a>
+  <a href="#pamyatka" onclick="toggleMenu();trackClick('mobile_nav_pamyatka','navigation')" data-i18n="nav_pamyatka">Памятка</a>
+  <a href="#contacts" onclick="toggleMenu();trackClick('mobile_nav_contacts','navigation')" data-i18n="nav_contacts">Контакты</a>
   <div style="display:flex;gap:.5rem;margin-top:.5rem;">
-    <button class="lang-btn active" onclick="setLang('ru');toggleMenu()">RU</button>
+    <button class="lang-btn active" onclick="setLang('ru');toggleMenu();trackClick('mobile_lang_ru','language')">RU</button>
     <span class="lang-sep">|</span>
-    <button class="lang-btn" onclick="setLang('by');toggleMenu()">BY</button>
+    <button class="lang-btn" onclick="setLang('by');toggleMenu();trackClick('mobile_lang_by','language')">BY</button>
   </div>
-  <a href="tel:+375291434544" class="btn btn-dark" style="margin-top:.5rem;" onclick="toggleMenu()" data-i18n="btn_book">Записаться</a>
+  <a href="tel:+375291434544" class="btn btn-dark" style="margin-top:.5rem;" onclick="toggleMenu();trackClick('mobile_book','cta')" data-i18n="btn_book">Записаться</a>
 </div>
 
 <section id="hero" class="hero" style="padding:0">
@@ -254,12 +254,12 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);letter-spacing:.05em;}
     <p class="hero-sub" data-i18n="hero_sub">Профессиональное оформление бровей с вниманием к форме лица и индивидуальным особенностям каждого клиента.</p>
     <div class="hero-actions">
       <div class="hero-phone-wrap">
-        <a href="#" class="btn btn-dark" id="heroCta" onclick="togglePopup('heroPhonePopup',event);return false;" data-i18n="btn_book">Записаться</a>
+        <a href="#" class="btn btn-dark" id="heroCta" onclick="togglePopup('heroPhonePopup',event);trackClick('hero_book','cta');return false;" data-i18n="btn_book">Записаться</a>
         <div class="hero-phone-popup" id="heroPhonePopup">
-          <a href="tel:+375291434544">+375 29 143&#45;45&#45;44</a>
+          <a href="tel:+375291434544" onclick="trackClick('hero_phone_call','phone')">+375 29 143&#45;45&#45;44</a>
         </div>
       </div>
-      <a href="#portfolio" class="btn btn-ghost" data-i18n="btn_portfolio">Смотреть работы</a>
+      <a href="#portfolio" class="btn btn-ghost" data-i18n="btn_portfolio" onclick="trackClick('hero_portfolio_link','navigation')">Смотреть работы</a>
     </div>
   </div>
   <div class="hero-img">
@@ -298,12 +298,12 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);letter-spacing:.05em;}
   <div class="services-footer">
     <p data-i18n="services_note">Точные детали и стоимость - уточняйте напрямую</p>
     <div class="services-phone-wrap">
-      <button class="btn btn-accent-fill" id="servicesCta" onclick="togglePopup('servicesPhonePopup',event)" data-i18n="btn_call">Позвонить</button>
+      <button class="btn btn-accent-fill" id="servicesCta" onclick="togglePopup('servicesPhonePopup',event);trackClick('services_call','cta')" data-i18n="btn_call">Позвонить</button>
       <div class="services-phone-popup" id="servicesPhonePopup">
-        <a href="tel:+375291434544">+375 29 143&#45;45&#45;44</a>
+        <a href="tel:+375291434544" onclick="trackClick('services_phone_call','phone')">+375 29 143&#45;45&#45;44</a>
       </div>
     </div>
-    <a href="https://www.instagram.com/bonfire.karina" target="_blank" rel="noopener" class="btn btn-dark-outline">Instagram</a>
+    <a href="https://www.instagram.com/bonfire.karina" target="_blank" rel="noopener" class="btn btn-dark-outline" onclick="trackClick('services_instagram','social')">Instagram</a>
   </div>
 </section>
 
@@ -327,7 +327,7 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);letter-spacing:.05em;}
     <div class="portfolio-card" style="background:var(--accent-light);display:flex;align-items:center;justify-content:center;">
       <div style="text-align:center;padding:2rem;">
         <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--muted);font-style:italic;" data-i18n="portfolio_insta_text">Больше работ<br>в Instagram</p>
-        <a href="https://www.instagram.com/bonfire.karina" target="_blank" rel="noopener" class="btn btn-dark" style="margin-top:1.4rem;">@bonfire.karina</a>
+        <a href="https://www.instagram.com/bonfire.karina" target="_blank" rel="noopener" class="btn btn-dark" style="margin-top:1.4rem;" onclick="trackClick('portfolio_instagram','social')">@bonfire.karina</a>
       </div>
     </div>
   </div>
@@ -461,14 +461,14 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);letter-spacing:.05em;}
       <h2 class="section-title" data-i18n="contacts_title">Запишитесь на процедуру</h2>
       <p style="color:rgba(255,255,255,.42);font-size:.88rem;margin-top:.8rem;" data-i18n="contacts_sub">Звоните или пишите в Instagram - отвечу быстро</p>
       <div class="contact-items">
-        <a href="tel:+375291434544" class="contact-item">
+        <a href="tel:+375291434544" class="contact-item" onclick="trackClick('contacts_phone_call','phone')">
           <span class="contact-icon">&#128222;</span>
           <div class="contact-info">
             <strong>+375 29 143&#45;45&#45;44</strong>
             <span data-i18n="contact_phone_label">Позвонить / записаться</span>
           </div>
         </a>
-        <a href="https://www.instagram.com/bonfire.karina" target="_blank" rel="noopener" class="contact-item">
+        <a href="https://www.instagram.com/bonfire.karina" target="_blank" rel="noopener" class="contact-item" onclick="trackClick('contacts_instagram','social')">
           <span class="contact-icon">&#128247;</span>
           <div class="contact-info">
             <strong>@bonfire.karina</strong>
@@ -494,7 +494,7 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);letter-spacing:.05em;}
 </section>
 
 <footer>
-  <a href="#hero" class="footer-logo">KarinaArtbrows</a>
+  <a href="#hero" class="footer-logo" onclick="trackClick('footer_logo','navigation')">KarinaArtbrows</a>
   <p data-i18n="footer_address">Минск / ул. Голубева, 13</p>
   <p>+375 29 143&#45;45&#45;44</p>
 </footer>
@@ -502,6 +502,16 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);letter-spacing:.05em;}
 <script>
 var ru={nav_services:"Услуги",nav_portfolio:"Работы",nav_cabinet:"Кабинет",nav_about:"О мастере",nav_pamyatka:"Памятка",nav_contacts:"Контакты",btn_book:"Записаться",btn_call:"Позвонить",btn_portfolio:"Смотреть работы",hero_eyebrow:"Мастер-бровист / Минск",hero_title:"Брови,<br>которые<br>говорят<br>за вас",hero_sub:"Профессиональное оформление бровей с вниманием к форме лица и индивидуальным особенностям каждого клиента.",hero_address:"Минск / ул. Голубева, 13",services_label:"Что я делаю",services_title:"Услуги",services_note:"Точные детали и стоимость - уточняйте напрямую",s1_name:"Коррекция формы",s1_desc:"Придание бровям идеальной формы под структуру лица",s2_name:"Окрашивание",s2_desc:"Подбор цвета и стойкое окрашивание бровей",s3_name:"Ламинирование",s3_desc:"Долгосрочная укладка и уход за волосками бровей",s4_name:"Архитектура бровей",s4_desc:"Комплексная работа с формой, цветом и объёмом",portfolio_label:"Мои работы",portfolio_title:"Результат говорит сам за себя",portfolio_sub:"Каждая работа - это индивидуальный подход. Форма, цвет и укладка подбираются под особенности лица.",portfolio_before_after:"До и после",portfolio_insta_text:"Больше работ<br>в Instagram",cabinet_label:"Пространство",cabinet_title:"Приём в комфортной обстановке",cf1_title:"Профессиональное освещение",cf1_desc:"Кольцевой свет и направленная лампа для точной работы",cf2_title:"Стерильность и безопасность",cf2_desc:"Одноразовые материалы, соблюдение всех санитарных норм",cf3_title:"Уютная атмосфера",cf3_desc:"Спокойная обстановка, без суеты салона - только вы и мастер",about_label:"Мастер",about_bio1:"Специализируюсь на оформлении бровей с учётом индивидуальных особенностей каждого клиента. Постоянно совершенствую навыки, прохожу обучение и слежу за актуальными техниками.",about_bio2:"Работаю только с качественными материалами и уделяю особое внимание безопасности и комфорту.",stat1_label:"лет опыта",stat2_label:"довольных клиентов",certs_title:"Сертификаты и обучение",cert1_name:"Архитектура бровей",cert1_issuer:"Базовый курс",cert2_name:"Ламинирование бровей",cert2_issuer:"Сертификат мастера",cert3_name:"Колористика",cert3_issuer:"Профессиональный курс",cert4_name:"Advanced Brow Design",cert4_issuer:"Мастер-класс",certs_note:"* Реальные сертификаты будут добавлены позже",pamyatka_label:"Важно знать",pamyatka_title:"Памятка клиента",pamyatka_sub:"Несколько простых правил, которые помогут визиту пройти комфортно для всех.",p1_title:"Домофон и звонок",p1_text:"Не звоните в домофон или дверь раньше назначенного времени - мастер может работать с другим клиентом.",p2_title:"Тишина в пространстве",p2_text:"Просьба соблюдать тишину в подъезде и у двери - рядом жилые квартиры.",p3_title:"Точность по времени",p3_text:"Старайтесь приходить вовремя. Опоздание более 15 минут может сократить время процедуры.",p4_title:"Без сопровождающих",p4_text:"Просьба приходить без сопровождающих и детей - пространство рассчитано на одного клиента.",p5_title:"Перед процедурой",p5_text:"Не наносите макияж на область бровей перед визитом. Чистая кожа - залог лучшего результата.",p6_title:"Отмена записи",p6_text:"Если планы изменились - предупредите заранее, минимум за 2 часа. Это поможет скорректировать расписание.",contacts_label:"Связаться",contacts_title:"Запишитесь на процедуру",contacts_sub:"Звоните или пишите в Instagram - отвечу быстро",contact_phone_label:"Позвонить / записаться",contact_address:"ул. Голубева, 13",contact_city:"Минск",map_note:"Минск / ул. Голубева, 13",footer_address:"Минск / ул. Голубева, 13"};
 var by={nav_services:"Паслугi",nav_portfolio:"Працы",nav_cabinet:"Кабiнет",nav_about:"Пра майстра",nav_pamyatka:"Памятка",nav_contacts:"Кантакты",btn_book:"Запiсацца",btn_call:"Патэлефанаваць",btn_portfolio:"Глядзець працы",hero_eyebrow:"Майстар-броўнiст / Мiнск",hero_title:"Бровы,<br>якiя<br>гавораць<br>за вас",hero_sub:"Прафесiйнае афармленне броваў з увагай да формы твару i iндывiдуальных асаблiвасцей кожнага кліента.",hero_address:"Мiнск / вул. Галубева, 13",services_label:"Што я раблю",services_title:"Паслугi",services_note:"Дакладныя дэталi i кошт - удакладняйце наўпрост",s1_name:"Карэкцыя формы",s1_desc:"Надаванне бровам iдэальнай формы пад структуру твару",s2_name:"Фарбаванне",s2_desc:"Падбор колеру i стойкае фарбаванне броваў",s3_name:"Ламiнаванне",s3_desc:"Доўгатэрмiновая ўкладка i догляд за валаскамi броваў",s4_name:"Архiтэктура броваў",s4_desc:"Комплексная праца з формай, колерам i аб'ёмам",portfolio_label:"Мае працы",portfolio_title:"Вынiк гаворыць сам за сябе",portfolio_sub:"Кожная праца - гэта iндывiдуальны падыход. Форма, колер i ўкладка падбiраюцца пад асаблiвасцi твару.",portfolio_before_after:"Да i пасля",portfolio_insta_text:"Больш прац<br>у Instagram",cabinet_label:"Прастора",cabinet_title:"Прыём у камфортнай абстаноўцы",cf1_title:"Прафесiйнае асвятленне",cf1_desc:"Кальцавое святло i накiраваная лямпа для дакладнай працы",cf2_title:"Стэрыльнасць i бяспека",cf2_desc:"Аднаразовыя матэрыялы, захаванне ўсiх санiтарных нормаў",cf3_title:"Утульная атмасфера",cf3_desc:"Спакойная абстаноўка, без мiтуснi салона - толькi вы i майстар",about_label:"Майстар",about_bio1:"Спецыялiзуюся на афармленнi броваў з улiкам iндывiдуальных асаблiвасцей кожнага кліента. Пастаянна ўдасканальваю навыкi i сачу за актуальнымi тэхнiкамi.",about_bio2:"Працую толькi з якаснымi матэрыяламi i надаю асаблiвую ўвагу бяспецы i камфорту.",stat1_label:"гадоў вопыту",stat2_label:"задаволеных кліентаў",certs_title:"Сертыфiкаты i навучанне",cert1_name:"Архiтэктура броваў",cert1_issuer:"Базавы курс",cert2_name:"Ламiнаванне броваў",cert2_issuer:"Сертыфiкат майстра",cert3_name:"Калярыстыка",cert3_issuer:"Прафесiйны курс",cert4_name:"Advanced Brow Design",cert4_issuer:"Майстар-клас",certs_note:"* Рэальныя сертыфiкаты будуць дададзены пазней",pamyatka_label:"Важна ведаць",pamyatka_title:"Памятка кліента",pamyatka_sub:"Некалькi простых правiлаў, якiя дапамогуць вiзiту прайсцi камфортна для ўсiх.",p1_title:"Дамафон i званок",p1_text:"Не тэлефануйце ў дамафон або дзверы раней прызначанага часу - майстар можа працаваць з iншым кліентам.",p2_title:"Цiшыня ў прасторы",p2_text:"Просьба захоўваць цiшыню ў пад'ездзе i ля дзвярэй - побач жылыя кватэры.",p3_title:"Дакладнасць па часе",p3_text:"Старайцеся прыходзiць своечасова. Спазненне больш за 15 хвiлiн можа скарацiць час працэдуры.",p4_title:"Без суправаджаючых",p4_text:"Просьба прыходзiць без суправаджаючых i дзяцей - прастора разлiчана на аднаго кліента.",p5_title:"Перад працэдурай",p5_text:"Не наносьце макiяж на вобласць броваў перад вiзiтам. Чыстая скура - залог лепшага вынiку.",p6_title:"Адмена запiсу",p6_text:"Калi планы змянiлiся - папярэдзьце загадзя, мiнiмум за 2 гадзiны.",contacts_label:"Звязацца",contacts_title:"Запiшыцеся на працэдуру",contacts_sub:"Тэлефануйце або пiшыце ў Instagram - адкажу хутка",contact_phone_label:"Патэлефанаваць / запiсацца",contact_address:"вул. Галубева, 13",contact_city:"Мiнск",map_note:"Мiнск / вул. Галубева, 13",footer_address:"Мiнск / вул. Галубева, 13"};
+
+function trackClick(label, category){
+  category = category || 'button_click';
+  if(typeof gtag === 'function'){
+    gtag('event', category, {
+      event_category: category,
+      event_label: label
+    });
+  }
+}
 
 var currentLang='ru';
 var allPopups=['navPhonePopup','heroPhonePopup','servicesPhonePopup'];
